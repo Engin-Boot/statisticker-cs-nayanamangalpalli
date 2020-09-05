@@ -18,14 +18,17 @@ namespace Statistics.Test
             Assert.True(Math.Abs(computedStats.max - 8.9) <= epsilon);
             Assert.True(Math.Abs(computedStats.min - 1.5) <= epsilon);
         }
-//         public void ReportsNaNForEmptyInput()
-//         {
-//             var statsComputer = new StatsComputer();
-//             var computedStats = statsComputer.CalculateStatistics(
-//                 new List<___>{});
-//             //All fields of computedStats (average, max, min) must be
-//             //Double.NaN (not-a-number), as described in
-//             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
-//         }
+        [Fact]
+        public void ReportsNaNForEmptyInput()
+        {
+            var statsComputer = new StatsComputer();
+            var computedStats = statsComputer.CalculateStatistics(
+                new List<float>{});
+            
+            float epsilon = 0.001F;
+            Assert.False(Math.Abs(computedStats.average - float.NaN) <= epsilon);
+            Assert.False(Math.Abs(computedStats.max - float.NaN) <= epsilon);
+            Assert.False(Math.Abs(computedStats.min - float.NaN) <= epsilon);
+        }
     }
 }
