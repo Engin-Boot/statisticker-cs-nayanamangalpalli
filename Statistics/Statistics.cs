@@ -15,7 +15,7 @@ namespace Statistics
             foreach(float number in numbers){
                 sum = sum + number;
                 min = number < min ? number : min;
-                max = number < max ? number : max;
+                max = number > max ? number : max;
             }
             stats.average = sum / numbers.Count;
             stats.min = min;
