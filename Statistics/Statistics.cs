@@ -10,8 +10,8 @@ namespace Statistics
             Stats stats = new Stats();
             
             float sum = 0;
-            float min = 0;
-            float max = 0;
+            float min = numbers[0];
+            float max = numbers[0];
             foreach(float number in numbers){
                 sum = sum + number;
                 min = number < min ? number : min;
