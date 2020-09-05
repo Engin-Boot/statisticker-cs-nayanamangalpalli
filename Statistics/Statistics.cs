@@ -5,12 +5,9 @@ namespace Statistics
 {
     public class StatsComputer
     {
-        float average;
-        float max;
-        float min;
-        
         public Stats CalculateStatistics(List<float> numbers) {
             //Implement statistics here
+            Stats stats = new Stats();
             
             float sum = 0;
             float min = 0;
@@ -20,8 +17,18 @@ namespace Statistics
                 min = number < min ? number : min;
                 max = number < max ? number : max;
             }
-            average = sum / numbers.Count;
-            
+            stats.average = sum / numbers.Count;
+            stats.min = min;
+            stats.max = max;
+        
+            return stats;
+        }
+        
+        Class Stats {
+        
+            float average;
+            float max;
+            float min;
         }
     }
 }
