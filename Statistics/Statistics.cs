@@ -13,6 +13,7 @@ namespace Statistics
                 stats.average = float.NaN;
                 stats.min = float.NaN;
                 stats.max = float.NaN;
+                return stats;
             }
             else{
                 float sum = numbers[0];
@@ -26,9 +27,10 @@ namespace Statistics
                 stats.average = sum / numbers.Count;
                 stats.min = min;
                 stats.max = max;
+                
+            return stats;
             }
             
-            return stats;
         }
     }
     public class Stats {
