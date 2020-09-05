@@ -26,9 +26,9 @@ namespace Statistics
     }
     public class Stats {
 
-        float average;
-        float max;
-        float min;
+        public float average;
+        public float max;
+        public float min;
     }
     
 }
