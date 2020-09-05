@@ -24,7 +24,7 @@ namespace Statistics
             return stats;
         }
     }
-    Class Stats {
+    public class Stats {
 
         float average;
         float max;
