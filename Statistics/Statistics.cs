@@ -16,19 +16,8 @@ namespace Statistics
                 return stats;
             }
             else{
-                float sum = numbers[0];
-                float min = numbers[0];
-                float max = numbers[0];
-                for(int i = 1; i< numbers.Count; i++){
-                    sum = sum + numbers[i];
-                    min = numbers[i] < min ? numbers[i] : min;
-                    max = numbers[i] > max ? numbers[i] : max;
-                }
-                stats.average = sum / numbers.Count;
-                stats.min = min;
-                stats.max = max;
-                
-            return stats;
+                stats.CalculateAverageMinMax(numbers);
+                return stats;
             }
             
         }
@@ -38,6 +27,21 @@ namespace Statistics
         public float average;
         public float max;
         public float min;
+        
+        public void CalculateAverageMinMax(List<float> numbers){
+            float sum = numbers[0];
+            float min = numbers[0];
+            float max = numbers[0];
+            for(int i = 1; i< numbers.Count; i++){
+                sum = sum + numbers[i];
+                min = numbers[i] < min ? numbers[i] : min;
+                max = numbers[i] > max ? numbers[i] : max;
+            }
+            this.average = sum / numbers.Count;
+            this.min = min;
+            this.max = max;
+        
+        }
     }
     
 }
