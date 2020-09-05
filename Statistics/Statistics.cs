@@ -23,12 +23,12 @@ namespace Statistics
         
             return stats;
         }
-        
-        Class Stats {
-        
-            float average;
-            float max;
-            float min;
-        }
     }
+    Class Stats {
+
+        float average;
+        float max;
+        float min;
+    }
+    
 }
