@@ -7,20 +7,27 @@ namespace Statistics
     {
         public Stats CalculateStatistics(List<float> numbers) {
             //Implement statistics here
-            Stats stats = new Stats();
-            
-            float sum = 0;
-            float min = numbers[0];
-            float max = numbers[0];
-            foreach(float number in numbers){
-                sum = sum + number;
-                min = number < min ? number : min;
-                max = number > max ? number : max;
+           Stats stats = new Stats();
+            if(numbers.Count == 0){
+                
+                stats.average = float.NaN;
+                stats.min = float.NaN;
+                stats.max = float.NaN;
             }
-            stats.average = sum / numbers.Count;
-            stats.min = min;
-            stats.max = max;
-        
+            else{
+                float sum = numbers[0];
+                float min = numbers[0];
+                float max = numbers[0];
+                for(int i = 1; i< numbers.Count; i++){
+                    sum = sum + numbers[i];
+                    min = numbers[i] < min ? numbers[i] : min;
+                    max = numbers[i] > max ? numbers[i] : max;
+                }
+                stats.average = sum / numbers.Count;
+                stats.min = min;
+                stats.max = max;
+            }
+            
             return stats;
         }
     }
